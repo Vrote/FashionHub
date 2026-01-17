@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - SeasonalSale</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script defer src="script.js"></script>
+
+    <style>
+        .banner4 {
+            background: url('sale-banner.jpg') no-repeat center center/cover;
+            color: rgb(226, 19, 19);
+            padding: 80px 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 80%; 
+        }
+        .banner4 h2 {
+            font-size: 2.5rem;
+            margin-left: 300px;
+        }
+        .banner4 p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            margin-left: 350px;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 50px 10px;
+            background: #fff;
+            border-radius: 10px;
+            max-width: 90%;
+            margin: auto;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .products h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff416c;
+            margin-left: 600px;
+        }
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            width: 300px;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product h3 {
+            margin: 10px 0;
+            font-size: 1.3rem;
+        }
+        .product p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: red;
+            font-size: 0.9rem;
+        }
+        .product button {
+            background: #ff416c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            margin-top: 10px;
+        }
+        .product button:hover {
+            background: #ff4b2b;
+            box-shadow: 0px 5px 15px rgba(255, 65, 108, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="FashionHub Logo">
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <ion-icon name="search-outline"></ion-icon>
+        </div>
+
+        <div class="nav-items">
+            <ul>
+                <li class="list active">
+                    <a href="test.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="shop.html">
+                        <span class="icon">
+                            <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop Now</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="about.html">
+                        <span class="icon">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="cart1.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="contact.html">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="orders.html">
+                        <span class="icon">
+                            <ion-icon name="clipboard-outline"></ion-icon>
+                        </span>
+                        <span class="text">Orders</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="login_registration.html">
+                        <span class="icon">
+                            <ion-icon name="log-in-outline"></ion-icon>
+                        </span>
+                        <span class="text">Login</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h2>SEASONAL SALE - WINTER COLLECTION</h2>
+        <p>Get up to 50% OFF on selected items!</p>
+    </div>
+
+    <section class="banner4">
+        <h2>Hurry Up! Limited Time Offer</h2>
+        <p>Don't miss out on our biggest sale of the season.</p>
+    </section>
+
+    <section class="products">
+        <h2>Hot Deals</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="winter-jacket.jpg" alt="Winter Jacket">
+                <h3>Winter Jacket</h3>
+                <p>$49.99 <span class="old-price">$99.99</span></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="boots.jpg" alt="Winter Boots">
+                <h3>Winter Boots</h3>
+                <p>$39.99 <span class="old-price">$79.99</span></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="sweater.jpg" alt="Sweater">
+                <h3>Warm Sweater</h3>
+                <p>$29.99 <span class="old-price">$59.99</span></p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="btn">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo1"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"><ion-icon name="logo-facebook"></ion-icon></i>
+                    <i class="fab fa-twitter"><ion-icon name="logo-twitter"></ion-icon></i>
+                    <i class="fab fa-instagram"><ion-icon name="logo-instagram"></ion-icon></i>
+                    <i class="fab fa-pinterest-p"><ion-icon name="logo-pinterest"></ion-icon></i>
+                    <i class="fab fa-youtube"><ion-icon name="logo-youtube"></ion-icon></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="login_registration.html">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="app.jpg" alt="">
+                <img src="play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>@ 2021, FashionHub - Ecommerce Website</p>
+        </div>
+
+    </footer>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function active() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', active));
+    </script>
+
+</body>
+
+</html>

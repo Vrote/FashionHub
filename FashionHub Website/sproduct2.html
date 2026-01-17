@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script defer src="script.js"></script>
+
+    <style>
+        .star-rating {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .star-rating ion-icon {
+            color: gold;
+            margin-right: 2px;
+        }
+
+        .star-rating span {
+            margin-left: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .cart-btn1 {
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: 0.3s;
+        }
+
+        .cart-btn1:hover {
+            background: #555;
+        }
+
+        .button {
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #555;
+        }
+
+        .brand-card {
+            background: linear-gradient(135deg, #f3f3f3, #ffffff);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-left: 5px solid #ff6f61;
+        }
+
+        .brand-card h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .brand-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .brand-card ul li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-card ul li::before {
+            color: #ff6f61;
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        /*Review section*/
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .review-form,
+        .review-display {
+            width: 48%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-form h2,
+        .review-display h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .review-form input,
+        .review-form select,
+        .review-form textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .review-form button {
+            width: 100%;
+            background: black;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .review-form button:hover {
+            background: #444;
+        }
+
+        .review-item {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 5px solid #FFD700;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-item h4 {
+            margin: 0;
+            color: #222;
+        }
+
+        .review-item span {
+            color: gold;
+        }
+
+        .review-item p {
+            margin-top: 5px;
+        }
+
+        #overall-rating {
+            background: #ff5f3b;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="FashionHub Logo">
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <ion-icon name="search-outline"></ion-icon>
+        </div>
+
+        <div class="nav-items">
+            <ul>
+                <li class="list ">
+                    <a href="test.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="shop.html">
+                        <span class="icon">
+                            <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop Now</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="about.html">
+                        <span class="icon">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="cart1.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="contact.html">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="orders.html">
+                        <span class="icon">
+                            <ion-icon name="clipboard-outline"></ion-icon>
+                        </span>
+                        <span class="text">Orders</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="login_registration.html">
+                        <span class="icon">
+                            <ion-icon name="log-in-outline"></ion-icon>
+                        </span>
+                        <span class="text">Login</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="n1.jpg" width="100%" id="MainImg" alt="">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="n1.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="n2.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="n3.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="n4.jpg" width="100%" class="small-img" alt="">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="single-pro-details">
+            <h6>T-Shirts</h6>
+            <h4> Men's Fashion T-Shirts</h4>
+            <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-half-outline"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+                <span>(4.0/5)</span>
+            </div>
+            <h2>$100.00</h2>
+            <select>
+                <option>Select Size</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+            </select>
+            <input type="number" value="1">
+            <button class="cart-btn1" data-name="Cartoon Astronaut T-Shirts" data-price="$78" data-image="n1.jpg">Add To
+                Cart</button>
+            <button class="button" onclick="redirectToCheckout('Product Name', 'Price', 'image-url.jpg')">Buy
+                Now</button>
+            <h4>Products Details</h4>
+            <span>The Gildan Ultra Cotton T-Shirts is made from a substantial 6.0 oz. per sq. yd. fabric constructed
+                from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear.
+                Featuring a taped neck and shoulder, and a seamless double-needle collar, and available in a range of
+                colors, it offers it all in the ultimate head-turning package.</span>
+
+            <div class="brand-card">
+                <h2>Top Brand: Allen Solly</h2>
+                <ul>
+                    <li>✅ 1.86% positive ratings from 100K+ customers</li>
+                    <li>📦 100K+ recent orders from this brand</li>
+                    <li>⏳ 10+ years on FashionHub</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="product1" id="product1">
+        <h2>Featured Products</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div class="pro-container">
+            <div class="pro">
+                <div onclick="window.location.href='sproduct.html'; ">
+                    <img src="f1.jpg">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                        </div>
+                        <h4>$78</h4>
+                    </div>
+                </div>
+                <a href='#' class="cart-btn" data-name="Cartoon Astronaut T-Shirts" data-price="78"
+                    data-image="f1.jpg"><ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+
+            <div class="pro">
+                <div onclick="window.location.href='sproduct.html'; ">
+                    <img src="f2.jpg">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                        </div>
+                        <h4>$78</h4>
+                    </div>
+                </div>
+                <a href='#' class="cart-btn" data-name="Cartoon Astronaut T-Shirts" data-price="78"
+                    data-image="f2.jpg"><ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+
+            <div class="pro">
+                <div onclick="window.location.href='sproduct.html'; ">
+                    <img src="f3.jpg">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                        </div>
+                        <h4>$78</h4>
+                    </div>
+                </div>
+                <a href='#' class="cart-btn" data-name="Cartoon Astronaut T-Shirts" data-price="78"
+                    data-image="f3.jpg"><ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+
+            <div class="pro">
+                <div onclick="window.location.href='sproduct.html'; ">
+                    <img src="f4.jpg">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                            <a>
+                                <ion-icon name="star"></ion-icon></a>
+                        </div>
+                        <h4>$78</h4>
+                    </div>
+                </div>
+                <a href='#' class="cart-btn" data-name="Cartoon Astronaut T-Shirts" data-price="78"
+                    data-image="f4.jpg"><ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Left Side: User Review Form -->
+        <div class="review-form">
+            <h2>Leave a Review</h2>
+            <input type="text" id="name" placeholder="Your Name">
+            <select id="rating">
+                <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+                <option value="4">⭐⭐⭐⭐ (4)</option>
+                <option value="3">⭐⭐⭐ (3)</option>
+                <option value="2">⭐⭐ (2)</option>
+                <option value="1">⭐ (1)</option>
+            </select>
+            <textarea id="review" placeholder="Write your review..."></textarea>
+            <button onclick="submitReview()">Submit</button>
+        </div>
+
+        <!-- Right Side: Display Customer Reviews -->
+        <div class="review-display">
+            <h2>Customer Reviews</h2>
+            <div id="overall-rating">
+                <h3>Overall Rating: <span id="average-rating">N/A</span></h3>
+            </div>
+            <div id="reviews">
+                <p>No reviews yet. Be the first to review!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="newsletter">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="btn">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo1"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"><ion-icon name="logo-facebook"></ion-icon></i>
+                    <i class="fab fa-twitter"><ion-icon name="logo-twitter"></ion-icon></i>
+                    <i class="fab fa-instagram"><ion-icon name="logo-instagram"></ion-icon></i>
+                    <i class="fab fa-pinterest-p"><ion-icon name="logo-pinterest"></ion-icon></i>
+                    <i class="fab fa-youtube"><ion-icon name="logo-youtube"></ion-icon></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="login_registration.html">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="app.jpg" alt="">
+                <img src="play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>@ 2021, FashionHub - Ecommerce Website</p>
+        </div>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var MainImg = document.getElementById("MainImg");
+            var smallImgs = document.querySelectorAll(".small-img");
+
+            smallImgs.forEach(img => {
+                img.addEventListener("click", function () {
+                    MainImg.src = img.src;
+                });
+            });
+            document.querySelector(".button").addEventListener("click", function () {
+                alert("Redirecting to Checkout...");
+                window.location.href = "checkout.html"; // Change to your checkout page
+            });
+
+        });
+
+    </script>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function active() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', active));
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".button").addEventListener("click", function () {
+                let productName = document.querySelector(".single-pro-details h4").textContent;
+                let productPrice = document.querySelector(".single-pro-details h2").textContent;
+                let productImage = document.getElementById("MainImg").src;
+                let productSize = document.querySelector("select").value;
+                let quantity = document.querySelector("input[type='number']").value;
+
+                if (productSize === "Select Size") {
+                    alert("Please select a size before proceeding.");
+                    return;
+                }
+
+                let orderSummary = {
+                    name: productName,
+                    price: productPrice,
+                    image: productImage,
+                    size: productSize,
+                    quantity: quantity
+                };
+
+                localStorage.setItem("orderSummary", JSON.stringify(orderSummary));
+                window.location.href = "checkout.html";
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

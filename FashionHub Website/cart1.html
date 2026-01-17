@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - Cart</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        .cart {
+            width: 60%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .cart-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .cart-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .cart-item:hover {
+            background: #eee;
+        }
+
+        .cart-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .cart-details {
+            flex: 1;
+            margin-left: 15px;
+            text-align: left;
+        }
+
+        .cart-details h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .cart-details p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .remove-item {
+            background: #ff4d4d;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .remove-item:hover {
+            background: #cc0000;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 10px;
+            border-top: 2px solid #ddd;
+        }
+
+        .btn-buy {
+            background: #b93636;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-buy:hover {
+            background: #b93636;
+        }
+
+        @media (max-width: 768px) {
+            .cart {
+                width: 90%;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .cart-details {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="FashionHub Logo">
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <ion-icon name="search-outline"></ion-icon>
+        </div>
+
+        <div class="nav-items">
+            <ul>
+                <li class="list">
+                    <a href="test.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="shop.html">
+                        <span class="icon">
+                            <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop Now</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="about.html">
+                        <span class="icon">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="cart1.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="contact.html">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="orders.html">
+                        <span class="icon">
+                            <ion-icon name="clipboard-outline"></ion-icon>
+                        </span>
+                        <span class="text">Orders</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="login_registration.html">
+                        <span class="icon">
+                            <ion-icon name="log-in-outline"></ion-icon>
+                        </span>
+                        <span class="text">Login</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-header1">
+        <h2>#let's_talk</h2>
+        <p>LEAVE A MESSAGE, We love to hear from you!</p>
+    </div>
+
+    <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <div class="cart-content"></div>
+
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+        </div>
+        <button type="button" class="btn-buy">Buy Now</button>
+    </div>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo1"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"><ion-icon name="logo-facebook"></ion-icon></i>
+                    <i class="fab fa-twitter"><ion-icon name="logo-twitter"></ion-icon></i>
+                    <i class="fab fa-instagram"><ion-icon name="logo-instagram"></ion-icon></i>
+                    <i class="fab fa-pinterest-p"><ion-icon name="logo-pinterest"></ion-icon></i>
+                    <i class="fab fa-youtube"><ion-icon name="logo-youtube"></ion-icon></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="login_registration.html">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="app.jpg" alt="">
+                <img src="play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>@ 2021, FashionHub - Ecommerce Website</p>
+        </div>
+
+    </footer>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function active() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', active));
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cartContent = document.querySelector(".cart-content");
+            const totalPriceElement = document.querySelector(".total-price");
+            const buyButton = document.querySelector(".btn-buy");
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cartContent.innerHTML = "";
+
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+
+                cartItem.innerHTML = `
+            <img src="${item.image}" class="cart-img">
+            <div class="cart-details">
+                <h4>${item.name}</h4>
+                <p>Price: ${item.price}</p>
+            </div>
+            <button class="remove-item" data-index="${index}">Remove</button>
+        `;
+
+                cartContent.appendChild(cartItem);
+
+
+                totalPrice += parseFloat(item.price);
+            });
+
+            totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+
+            document.querySelectorAll(".remove-item").forEach(button => {
+                button.addEventListener("click", function () {
+                    const index = this.getAttribute("data-index");
+
+                    cart.splice(index, 1);
+
+                    localStorage.setItem("cart", JSON.stringify(cart));
+
+                    location.reload();
+                });
+            });
+
+            buyButton.addEventListener("click", function () {
+                if (cart.length === 0) {
+                    alert("Your cart is empty! Add some items before proceeding.");
+                    return;
+                }
+
+                alert("Thank you for your purchase! Your order has been placed.");
+
+                localStorage.removeItem("cart");
+                location.reload();
+            });
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".button").addEventListener("click", function () {
+                let productName = document.querySelector(".single-pro-details h4").textContent;
+                let productPrice = document.querySelector(".single-pro-details h2").textContent;
+                let productImage = document.getElementById("MainImg").src;
+                let productSize = document.querySelector("select").value;
+                let quantity = document.querySelector("input[type='number']").value;
+
+                if (productSize === "Select Size") {
+                    alert("Please select a size before proceeding.");
+                    return;
+                }
+
+                let orderSummary = {
+                    name: productName,
+                    price: productPrice,
+                    image: productImage,
+                    size: productSize,
+                    quantity: quantity
+                };
+
+                localStorage.setItem("orderSummary", JSON.stringify(orderSummary));
+                window.location.href = "checkout.html";
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

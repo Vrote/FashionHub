@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - Orders</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script defer src="script.js"></script>
+    <style>
+        .success-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 1220px;
+            margin-top: 25px;
+            margin-left: 150px;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        .order-summary {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            gap: 30px;
+        }
+        .order-summary img {
+            width: 150px;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .details {
+            flex: 1;
+        }
+        .details h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 20px;
+            text-align:left;
+        }
+        .details p {
+            margin: 8px 0;
+            font-size: 15px;
+            color: #555;
+            text-align: left;
+        }
+        .back-home {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #2196F3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-home:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="FashionHub Logo">
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <ion-icon name="search-outline"></ion-icon>
+        </div>
+
+        <div class="nav-items">
+            <ul>
+                <li class="list">
+                    <a href="test.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="shop.html">
+                        <span class="icon">
+                            <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop Now</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="about.html">
+                        <span class="icon">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="cart1.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <li class="list ">
+                    <a href="contact.html">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="orders.html">
+                        <span class="icon">
+                            <ion-icon name="clipboard-outline"></ion-icon>
+                        </span>
+                        <span class="text">Orders</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="login_registration.html">
+                        <span class="icon">
+                            <ion-icon name="log-in-outline"></ion-icon>
+                        </span>
+                        <span class="text">Login</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-header1">
+        <h2>#let's_talk</h2>
+        <p>LEAVE A MESSAGE, We love to hear from you!</p>
+    </div>
+    <div class="success-container">
+        <h1>🎉 Order Placed Successfully!</h1>
+        <div class="order-summary" id="orderSummary">
+            <!-- Order Details will be loaded here -->
+        </div>
+        <a href="test.html" class="back-home">← Back to Home</a>
+    </div>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo1"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"><ion-icon name="logo-facebook"></ion-icon></i>
+                    <i class="fab fa-twitter"><ion-icon name="logo-twitter"></ion-icon></i>
+                    <i class="fab fa-instagram"><ion-icon name="logo-instagram"></ion-icon></i>
+                    <i class="fab fa-pinterest-p"><ion-icon name="logo-pinterest"></ion-icon></i>
+                    <i class="fab fa-youtube"><ion-icon name="logo-youtube"></ion-icon></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="login_registration.html">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="app.jpg" alt="">
+                <img src="play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>@ 2021, FashionHub - Ecommerce Website</p>
+        </div>
+
+    </footer>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function active() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', active));
+    </script>
+
+    <script>
+        window.onload = function () {
+            const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+
+            if (orderDetails) {
+                const summaryDiv = document.getElementById('orderSummary');
+                summaryDiv.innerHTML = `
+        <img src="${orderDetails.productImage}" alt="Product Image">
+        <div class="details">
+          <h2>Order Summary</h2>
+          <p><strong>Product:</strong> ${orderDetails.productName}</p>
+          <p><strong>Price:</strong> $${orderDetails.productPrice}</p>
+          <p><strong>Quantity:</strong> ${orderDetails.quantity}</p>
+          <p><strong>Size:</strong> ${orderDetails.size}</p>
+          <p><strong>Total:</strong> $${orderDetails.totalPrice}</p>
+          <hr>
+          <p><strong>Shipping To:</strong> ${orderDetails.name}, ${orderDetails.address}, ${orderDetails.city} - ${orderDetails.zip}</p>
+        </div>
+        `;
+            } else {
+                document.getElementById('orderSummary').innerHTML = "<p>No Order Found!</p>";
+            }
+
+        };
+    </script>
+    
+</body>
+
+</html>

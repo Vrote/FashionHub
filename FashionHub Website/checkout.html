@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - Checkout Page</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script defer src="script2.js"></script>
+    <style>
+        .checkout-container {
+            background: rgb(194, 209, 253);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 600px;
+            margin-left: 450px;
+            margin-top: 30px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        h2,
+        h3 {
+            text-align: center;
+            color: #081e57;
+            font-weight: 600;
+            padding: 10px 5px;
+        }
+        .order-summary {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            line-height: 27px;
+        }
+        .order-summary p {
+            margin-left: 10px;
+        }
+        .shipping-details,
+        .apply-coupon {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .shipping-details label {
+            margin-left: 15px;
+        }
+        .payment-method {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .payment-method label {
+            display: flex;
+            line-height: 27px;
+            margin-left: 15px;
+        }
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .order-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+        .input[type="text"] {
+            width: 95%;
+            padding: 10px;
+            margin: 5px 0;
+            margin-left: 11px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: border 0.3s;
+        }
+        .input[type="text"]:focus {
+            border-color: #73affe;
+            outline: none;
+        }
+        .btn4 {
+            width: 50%;
+            padding: 12px;
+            background: linear-gradient(to right, #519bfc, #ff74ae);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-left: 11px;
+        }
+        .btn4:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.3);
+        }
+        .btn5 {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #519bfc, #ff74ae);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn5:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.3);
+        }
+        /* Background blur */
+        .qr-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .qr-card {
+            background: #ffffff;
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 64, 129, 0.6);
+            text-align: center;
+            animation: zoomIn 0.4s ease;
+            position: relative;
+            max-width: 350px;
+            width: 90%;
+        }
+        .qr-card .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ff4081;
+            font-weight: bold;
+            background: none;
+            border: none;
+        }
+        .qr-image img {
+            width: 220px;
+            height: 220px;
+            margin: 20px 0;
+        }
+        .note {
+            font-size: 14px;
+            color: #666;
+        }
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .payment-done-btn {
+            background: linear-gradient(45deg, #ff4081, #ff80ab);
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .payment-done-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="FashionHub Logo">
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <ion-icon name="search-outline"></ion-icon>
+        </div>
+
+        <div class="nav-items">
+            <ul>
+                <li class="list">
+                    <a href="test.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="shop.html">
+                        <span class="icon">
+                            <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop Now</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="about.html">
+                        <span class="icon">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="cart1.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <li class="list ">
+                    <a href="contact.html">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="orders.html">
+                        <span class="icon">
+                            <ion-icon name="clipboard-outline"></ion-icon>
+                        </span>
+                        <span class="text">Orders</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="login_registration.html">
+                        <span class="icon">
+                            <ion-icon name="log-in-outline"></ion-icon>
+                        </span>
+                        <span class="text">Login</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-header1">
+        <h2>#let's_talk</h2>
+        <p>LEAVE A MESSAGE, We love to hear from you!</p>
+    </div>
+
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="order-item">
+                <img id="product-image" src="" alt="Product Image">
+                <div class="item-details">
+                    <p><strong id="product-name">Product Name</strong></p>
+                    <p>Price: $<span id="product-price">0</span></p>
+                    <p>Quantity: <span id="quantity">1</span></p>
+                    <p>Size: <span id="product-size"></span></p>
+                </div>
+            </div>
+            <p><strong>Total: $<span id="total-price">0</span></strong></p>
+        </div>
+
+        <div class="shipping-details">
+            <h3>Shipping Details</h3>
+            <form id="checkout-form">
+                <label for="name">Full Name:</label>
+                <input class="input" type="text" id="name" required>
+
+                <label for="address">Address:</label>
+                <input class="input" type="text" id="address" required>
+
+                <label for="city">City:</label>
+                <input class="input" type="text" id="city" required>
+
+                <label for="zip">ZIP Code:</label>
+                <input class="input" type="text" id="zip" required>
+            </form>
+        </div>
+
+        <div class="payment-method">
+            <h3>Payment Method</h3>
+            <label><input class="input" type="radio" name="payment" value="card" checked> PhonePay</label>
+            <label><input class="input" type="radio" name="payment" value="upi"> GPay</label>
+            <label><input class="input" type="radio" name="payment" value="cod"> Cash on Delivery</label>
+        </div>
+
+        <div class="apply-coupon">
+            <input class="input" type="text" id="coupon" placeholder="Enter coupon code">
+            <button class="btn4" onclick="applyCoupon()">Apply</button>
+        </div>
+
+        <button class="btn5" class="confirm-order" onclick="submitOrder()">Confirm Order</button>
+    </div>
+    
+    <div id="qrPopup" class="qr-popup" style="display: none;">
+        <div class="qr-card">
+            <span class="close-btn" onclick="hideQR()">×</span>
+            <h2>Complete Your Payment</h2>
+            <p>Scan this QR Code with your preferred app</p>
+            <div class="qr-image">
+                <img id="qrImage" src="" alt="QR Code">
+            </div>
+            <p class="note">After payment, your order will be processed automatically.</p>
+            <button class="payment-done-btn" onclick="paymentDone()">Payment Done ✅</button>
+        </div>
+    </div>
+
+
+    <section class="newsletter">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="btn">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo1"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8gACZYI-C4TVeHxiFqD_VdwfG63f3Qe6lcT0157lqbEZ07V0CS1Bbgj60Nars1ETHv9U&usqp=CAU"
+                alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"><ion-icon name="logo-facebook"></ion-icon></i>
+                    <i class="fab fa-twitter"><ion-icon name="logo-twitter"></ion-icon></i>
+                    <i class="fab fa-instagram"><ion-icon name="logo-instagram"></ion-icon></i>
+                    <i class="fab fa-pinterest-p"><ion-icon name="logo-pinterest"></ion-icon></i>
+                    <i class="fab fa-youtube"><ion-icon name="logo-youtube"></ion-icon></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="login_registration.html">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="app.jpg" alt="">
+                <img src="play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>@ 2021, FashionHub - Ecommerce Website</p>
+        </div>
+
+    </footer>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function active() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', active));
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let orderSummary = JSON.parse(localStorage.getItem("orderSummary"));
+
+            if (orderSummary) {
+                document.getElementById("product-name").textContent = orderSummary.name;
+                document.getElementById("product-price").textContent = orderSummary.price.replace('$', '');
+                document.getElementById("product-size").textContent = orderSummary.size;
+                document.getElementById("quantity").textContent = orderSummary.quantity;
+                document.getElementById("total-price").textContent = (parseFloat(orderSummary.price.replace('$', '')) * parseInt(orderSummary.quantity)).toFixed(2);
+                document.getElementById("product-image").src = orderSummary.image;
+            } else {
+                document.querySelector(".order-summary").innerHTML = "<p>No order details found.</p>";
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
